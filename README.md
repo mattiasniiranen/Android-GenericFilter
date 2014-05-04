@@ -1,6 +1,67 @@
 Android-GenericFilter
 =====================
 
+Use generics to filter any Filterable.
+
+Example Usage
+-------------
+```java
+public class ObjectAdapter extends BaseAdapter implements Filterable {
+    private List<Object> mData;
+    private List<Object> mFilteredData;
+    private ObjectFilter mFilter;
+
+    @Override
+    public int getCount() {
+        return mFilteredData.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return mFilteredData.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
+    }
+
+    @Override
+    public ObjectFilter getFilter() {
+        if (mFilter == null) {
+            mFilter = new ObjectFilter();
+        }
+        return mFilter;
+    }
+
+    public class ObjectFilter extends GenericFilter<Object> {
+        @Override
+        protected FilterResults performFiltering(Object constraint) {
+            List<Object> resultCollection = new ArrayList<>();
+            for (Object o : mData) {
+                if (o.equals(constraint)) {
+                    resultCollection.add(o);
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.count = resultCollection.size();
+            results.values = resultCollection;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(Object constraint, FilterResults results) {
+            mFilteredData = (List<Object>) results.values;
+        }
+    }
+}
+```
+
 License
 -------
 
