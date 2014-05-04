@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.niiranen.genericfilter.test"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19"/>
+
+    <application
+        android:label="GenericFilter TestCase"
+        android:icon="@drawable/ic_launcher">
+        <activity
+            android:name="net.niiranen.genericfilter.StubActivity"
+            android:label="StubActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FRAMEWORK_INSTRUMENTATION_TEST"/>
+            </intent-filter>
+        </activity>
+        <uses-library android:name="android.test.runner"/>
+    </application>
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="net.niiranen.genericfilter"
+        android:label="GenericFilter tests"/>
+</manifest>
