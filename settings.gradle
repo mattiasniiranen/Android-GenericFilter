@@ -1,1 +1,1 @@
-include ':GenericFilter'
+include ':GenericFilter', ':SampleApplication'

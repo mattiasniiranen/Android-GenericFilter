@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GenericFilter Sample</string>
+    <string name="title_section1">All</string>
+    <string name="title_section2">Negative</string>
+    <string name="title_section3">Positive</string>
+    <string name="title_section4">Even</string>
+    <string name="title_section5">Odd</string>
+
+</resources>
