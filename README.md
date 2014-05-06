@@ -62,6 +62,15 @@ public class ObjectAdapter extends BaseAdapter implements Filterable {
 }
 ```
 
+Obtaining
+---------
+Add the the following to your gradle.build file.
+```gradle
+dependencies {
+    compile 'net.niiranen:Android-GenericFilter:1.0.+'
+}
+```
+
 License
 -------
 
