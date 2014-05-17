@@ -1,10 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.niiranen.genericfilter">
 
-    <application
-        android:allowBackup="true"
-        android:label="@string/app_name">
-
+    <application>
         <!-- Needed for testing -->
         <activity android:name=".StubActivity"/>
     </application>
