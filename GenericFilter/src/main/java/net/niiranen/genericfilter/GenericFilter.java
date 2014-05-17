@@ -148,8 +148,8 @@ public abstract class GenericFilter<E> extends Filter {
         }
 
         /**
-         * <p>Handles filtering requests by calling {@link Filter#performFiltering} and then sending
-         * a message with the results to the results handler.</p>
+         * <p>Handles filtering requests by calling {@link net.niiranen.genericfilter.GenericFilter#performFiltering}
+         * and then sending a message with the results to the results handler.</p>
          *
          * @param msg
          *     the filtering request
@@ -197,7 +197,7 @@ public abstract class GenericFilter<E> extends Filter {
     private class GenericResultsHandler extends Handler {
         /**
          * <p>Messages received from the request handler are processed in the UI thread. The
-         * processing involves calling {@link Filter#publishResults(CharSequence,
+         * processing involves calling {@link net.niiranen.genericfilter.GenericFilter#publishResults(E,
          * android.widget.Filter.FilterResults)} to post the results back in the UI and then
          * notifying the listener, if any.</p>
          *
