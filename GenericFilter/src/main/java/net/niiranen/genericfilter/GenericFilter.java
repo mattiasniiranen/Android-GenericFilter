@@ -82,7 +82,7 @@ public abstract class GenericFilter<E> extends Filter {
 
             Message message = mThreadHandler.obtainMessage(FILTER_TOKEN);
 
-            GenericRequestArguments<E> args = new GenericRequestArguments<>();
+            GenericRequestArguments<E> args = new GenericRequestArguments<E>();
             args.constraint = constraint;
             args.listener = listener;
             message.obj = args;
